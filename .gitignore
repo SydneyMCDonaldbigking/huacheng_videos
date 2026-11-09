@@ -1,0 +1,10 @@
+# 生成物和素材都不进 git：工程、测试素材、下载的素材、配乐、配音、成片
+build/
+work/
+footage/
+music/
+voice/
+配音*/
+成片*/
+__pycache__/
+*.pyc

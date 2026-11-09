@@ -1,0 +1,14 @@
+# conda env create -p D:/anaconda/envs/huacheng -f templates/explainer/environment.yml
+# (put the env on a big disk; -n huacheng also works)
+name: huacheng
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pillow
+  - pyyaml
+  - ffmpeg
+  - pip
+  - pip:
+      - playwright==1.55.0

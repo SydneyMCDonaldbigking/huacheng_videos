@@ -1,0 +1,48 @@
+# 测试用：docs/03 里建筑垃圾第 5 集的例子，配音、素材、配乐换成 make_demo.py 生成的测试品。
+# 建筑垃圾资源化 · 行业观察 第05集：用了再生料出问题，谁担责？
+title: 用了再生料出问题，谁担责？
+ep: 5
+series: 建筑垃圾资源化 · 行业观察 05
+corp: {name: 画城环保, tagline: 产业治废 · 美画城市, company: 成都画城环保科技有限公司, site: huacheng.city}
+audio_dir: ../../../work/demo/voice
+spoken: ../../../work/demo/voice/lines.json
+footage: ../../../work/demo/footage
+music_dir: ../../../work/demo/music
+lead: 2.4
+end_card: 5.0
+music: {file: demo_pad.wav, start: 2, open_db: -9, duck_db: -20}
+next: 正规工厂，为什么无米下锅？
+
+lines:
+  - {id: JZ05_01, cap: "工地上做决定，环保价值只是一面，另一面是责任边界。", keys: [责任边界], pause: 0.6}
+  - {id: JZ05_02, cap: "用了再生材料，后来出现裂缝、强度波动，或者验收有争议，这个责任算谁的？", keys: [裂缝, 强度波动, 验收有争议, 责任算谁的], pause: 0.7}
+  - {id: JZ05_03, cap: "设计、施工、搅拌站、材料供应商、检测机构，没有明确的标准撑腰，谁都会倾向保守。", keys: [明确的标准, 倾向保守], pause: 0.6}
+  - {id: JZ05_04, cap: "目前，再生产品的应用标准、检验方法、使用部位、掺配比例，都还在不断完善。", keys: [应用标准, 检验方法, 使用部位, 掺配比例], pause: 0.6}
+  - {id: JZ05_05, cap: "国家和地方都在推进，但落到具体项目上，很多单位还是会问三个问题。", keys: [三个问题], pause: 0.5}
+  - {id: JZ05_06, cap: "能不能用？用到哪里？验收怎么过？", keys: [能不能用, 用到哪里, 验收怎么过], pause: 0.7}
+  - {id: JZ05_07, cap: "这三个问题答不清楚，再生骨料就很难从试点可用，变成常规可用。", keys: [试点可用, 常规可用], pause: 0.4}
+
+shots:
+  - {at: 0, clip: {px: 8964292, in: 1}}
+  - {at: JZ05_01, clip: {px: 8964772, in: 4}}
+  - {at: JZ05_02, clip: {px: 7830155, in: 3}}
+  - {at: [JZ05_02, 0.5], clip: {px: 7830156, in: 8}}
+  - {at: JZ05_03, clip: {px: 8964378, in: 1}, dim: 0.45, blur: 4}
+  - {at: JZ05_04, clip: {px: 30911562, in: 4}, dim: 0.42, blur: 3}
+  - {at: [JZ05_04, 0.5], clip: {px: 39924262, in: 7}, dim: 0.42, blur: 3}
+  - {at: JZ05_05, clip: {px: 4404097, in: 14}}
+  - {at: JZ05_06, clip: {px: 8964792, in: 1}, dim: 0.42, blur: 3}
+  - {at: JZ05_07, clip: {px: 6740074, in: 1}}
+end: {clip: {px: 34271538, in: 2}}
+
+cards:
+  - {kind: hook, from: 0, to: [JZ05_01, 0.25], y: 700, kicker: "建筑垃圾 · 05", title: "用了再生料\n出问题，\n*谁担责*？", line: "行业观察"}
+  - {kind: tag, from: [JZ05_01, 0.6], to: JZ05_01, text: "责任边界", y: 400}
+  - {kind: tag, from: JZ05_02, to: JZ05_02, text: "裂缝 · 强度波动 · 验收争议", sub: "责任算谁的？", y: 400}
+  - {kind: cycle, from: JZ05_03, to: "JZ05_03+0.5", items: ["设计", "施工", "搅拌站", "材料供应商", "检测机构"], center: "没有标准\n*都保守*", y: 800, r: 300}
+  - {kind: points, from: JZ05_04, to: "JZ05_04+0.5", title: "还在*不断完善*", y: 430, rowH: 116,
+     items: [{text: "应用标准", at: [JZ05_04, 0.2]}, {text: "检验方法", at: [JZ05_04, 0.36]}, {text: "使用部位", at: [JZ05_04, 0.5]}, {text: "掺配比例", at: [JZ05_04, 0.64]}]}
+  - {kind: points, from: JZ05_06, to: "JZ05_06+0.6", title: "三个*问题*", y: 430, rowH: 130, bad: true,
+     items: [{num: "1", text: "能不能用？", at: [JZ05_06, 0.03]}, {num: "2", text: "用到哪里？", at: [JZ05_06, 0.35]}, {num: "3", text: "验收怎么过？", at: [JZ05_06, 0.65]}]}
+  - {kind: tag, from: [JZ05_07, 0.45], to: JZ05_07, text: "试点可用 → 常规可用", y: 400}
+  - {kind: note, from: [JZ05_01, 0.3], to: "JZ05_07+0.3", y: 1262, text: "行业观点，仅供参考"}
