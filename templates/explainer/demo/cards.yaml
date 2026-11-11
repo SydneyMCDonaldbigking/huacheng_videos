@@ -1,0 +1,57 @@
+# 测试用：把 docs/03 里其余各种卡片（stat、stats、flow、compare、bars、quad、route、eq）各放一张，
+# 台词和配音沿用 jz5.yaml。卡片里的数字和文字都是示意，不是真实数据。
+title: 卡片样式测试
+ep: 99
+series: 卡片样式测试 · 示意数据
+audio_dir: ../../../work/demo/voice
+footage: ../../../work/demo/footage
+music_dir: ../../../work/demo/music
+music: {file: demo_pad.wav, start: 10, open_db: -9, duck_db: -20}
+next: 下一集的标题写在这里
+
+lines:
+  - {id: JZ05_01, cap: "工地上做决定，环保价值只是一面，另一面是责任边界。", keys: [责任边界], pause: 0.6}
+  - {id: JZ05_02, cap: "用了再生材料，后来出现裂缝、强度波动，或者验收有争议，这个责任算谁的？", keys: [裂缝, 强度波动], pause: 0.7}
+  - {id: JZ05_03, cap: "设计、施工、搅拌站、材料供应商、检测机构，没有明确的标准撑腰，谁都会倾向保守。", keys: [明确的标准], pause: 0.6}
+  - {id: JZ05_04, cap: "目前，再生产品的应用标准、检验方法、使用部位、掺配比例，都还在不断完善。", keys: [应用标准], pause: 0.6}
+  - {id: JZ05_05, cap: "国家和地方都在推进，但落到具体项目上，很多单位还是会问三个问题。", keys: [三个问题], pause: 0.5}
+  - {id: JZ05_06, cap: "能不能用？用到哪里？验收怎么过？", keys: [能不能用], pause: 0.7}
+  - {id: JZ05_07, cap: "这三个问题答不清楚，再生骨料就很难从试点可用，变成常规可用。", keys: [常规可用], pause: 0.4}
+
+shots:
+  - {at: 0, clip: {px: 8964292, in: 1}}
+  - {at: JZ05_01, clip: {px: 8964772, in: 4}, dim: 0.42, blur: 3}
+  - {at: JZ05_02, clip: {px: 7830155, in: 3}, dim: 0.42, blur: 3}
+  - {at: JZ05_03, clip: {px: 8964378, in: 1}, dim: 0.45, blur: 4}
+  - {at: JZ05_04, clip: {px: 30911562, in: 4, x: 0.3}, dim: 0.42, blur: 3}
+  - {at: JZ05_05, clip: {px: 4404097, in: 14}, dim: 0.42, blur: 3}
+  - {at: JZ05_06, clip: {px: 8964792, in: 1}, dim: 0.42, blur: 3}
+  - {at: JZ05_07, clip: {px: 6740074, in: 1, x: 0.72}, dim: 0.42, blur: 3}
+end: {clip: {px: 34271538, in: 2}}
+
+cards:
+  - {kind: hook, from: 0, to: [JZ05_01, 0.25], kicker: "样式测试", title: "各种卡片\n*长什么样*？", line: "示意数据"}
+  - {kind: stat, from: [JZ05_01, 0.3], to: JZ05_01, label: "分解温度", value: 1200, suffix: "℃以下", sub: "一句补充说明", y: 520}
+  - {kind: stats, from: JZ05_02, to: JZ05_02, y: 460, rowH: 230, title: "两个*指标*",
+     items: [{value: 95, suffix: "%+", label: "指标一", sub: "说明", at: [JZ05_02, 0.2]},
+             {value: "3–6", suffix: "个月", count: false, label: "指标二", sub: "说明", at: [JZ05_02, 0.55]}]}
+  - {kind: flow, from: JZ05_03, to: "JZ05_03+0.5", title: "料去了*哪里*", y: 380, h: 760,
+     nodes: [{id: a, text: "产废方", x: 486, y: 170, tone: in, at: [JZ05_03, 0.05]},
+             {id: b, text: "运输方", x: 486, y: 360, at: [JZ05_03, 0.3]},
+             {id: c, text: "不合规去向", x: 270, y: 590, tone: waste, at: [JZ05_03, 0.5]},
+             {id: d, text: "处置厂", x: 702, y: 590, tone: prod, at: [JZ05_03, 0.75]}],
+     edges: [[a, b, "成本压到最低"], [b, c, "更便宜"], [b, d, "原料不足"]]}
+  - {kind: compare, from: JZ05_04, to: [JZ05_04, 0.5], y: 420, rowH: 116, at: [[JZ05_04, 0.15], [JZ05_04, 0.3]],
+     left: {title: "正规企业", items: ["无米下锅", "成本高"]}, right: {title: "非法倾倒", items: ["屡禁不止", "*成本低*"]}}
+  - {kind: bars, from: [JZ05_04, 0.5], to: "JZ05_04+0.5", title: "产能对比（万吨/年）", y: 420, rowH: 170, legend: false,
+     series: [{label: "全国总量", a: 14060, dec: 0, at: [JZ05_04, 0.75]}, {label: "其中某一类", a: 800, dec: 0, hi: true, at: [JZ05_04, 0.55]}]}
+  - {kind: quad, from: JZ05_05, to: JZ05_05, y: 420, ch: 250, title: "四个*数字*",
+     items: [{label: "投资", value: 30, suffix: "%", prefix: "省", sub: "示意", at: [JZ05_05, 0.1]},
+             {label: "工期", value: 6, suffix: "个月", sub: "示意", at: [JZ05_05, 0.3]},
+             {label: "产能", value: 10, suffix: "万吨", sub: "示意", at: [JZ05_05, 0.5]},
+             {label: "回收率", value: 98.5, suffix: "%", sub: "示意", at: [JZ05_05, 0.7]}]}
+  - {kind: route, from: JZ05_06, to: "JZ05_06+0.6", y: 420, idx: 2, name: "某一条技术路线", cap: "一句话说明这条路线",
+     items: [{k: "原料", v: "副产石膏"}, {k: "产品", v: "硫磺 + 氧化钙"}, {k: "关键设备", v: "回转窑"}], invest: "投资：*约省三成*（示意）"}
+  - {kind: eq, from: JZ05_07, to: "JZ05_07+0.3", y: 520, title: "石膏*还原*", step: "第一步",
+     eq: "CaSO4 + 2C -> CaS + 2CO2", hi: [CaS], note: "示意方程式"}
+  - {kind: note, from: [JZ05_01, 0.3], to: "JZ05_07+0.3", text: "以上为示意数据，仅用于检查卡片样式"}

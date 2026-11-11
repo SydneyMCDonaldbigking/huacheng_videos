@@ -16,12 +16,12 @@
 
 ## 现状（2026-11-08）
 
-- **讲解模板要重建。** 之前用的模板 `templates/explainer/`（`build.py`、卡片动画 `overlay.js` 等）只存在原来那台电脑上，没有提交到 GitHub，那台电脑上的副本现在也没有了。渲染引擎 `engine/` 在私有仓库 `SydneyMCDonaldbigking/Opue_video_add` 里，但它离开模板渲染不了讲解片。接手时按 [04](docs/04_模板说明.md) 重建模板，或者用别的工具做出同样规格和样式的片子。
+- **讲解模板已重建（2026-11-09）**，在 [`templates/explainer/`](templates/explainer/README.md)：从分集 YAML 到四个交付文件一条路走完，不再依赖私有仓库 `Opue_video_add` 的渲染引擎。用测试素材跑通过；卡片和字幕的位置、大小是按 [04](docs/04_模板说明.md) 的描述定的，**还没和以前交付的成片对过**，拿到旧成片后对照调整。
 - **配音的声音。** 男声「男20号」的参考音在私有仓库 `SydneyMCDonaldbigking/ai_hosting` 的 `assets/host/voice-ref-male.wav`。没有权限就向用户要。
-- **画城 logo。** 透明底的图标 PNG，向用户要，或者从画城的技术资料 PDF 里抠。
+- **画城 logo。** 已从官网取来（[huacheng-logo-full.png](https://www.huacheng.city/huacheng_assets/huacheng-logo-full.png)），抠成透明底图标放在 `templates/explainer/assets/logo_icon.png`。
 
 ## 接手后先做
 
-1. 向用户要：这一批的文章或资料、画城 logo、男20号参考音（或者已经配好的配音）。
+1. 向用户要：这一批的文章或资料、男20号参考音（或者已经配好的配音）。
 2. 建 Python 环境：用 conda 或 venv，**不要全局 `pip install`**。Windows 上运行 Python 加 `-X utf8`，临时目录指到空间大的盘。
 3. 读 01 和 02，然后从 01 的第一步开始。
